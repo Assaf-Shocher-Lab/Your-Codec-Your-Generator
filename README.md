@@ -20,15 +20,29 @@ Hyperprior, Mean-scale, TCM and GLC.
 
 ## How it works
 
-We wrap the codec's encoder $`E`$ with a fixed linear map built from a patch-PCA basis (the only fitted component):
+The decoder never sees the source image. From the received symbols $`s = (s_y, s_z)`$ it **searches for a target
+latent** $`y^\star`$ that the codec's own quantizers map back to $`s`$, close to the regular reconstruction
+$`x_{\mathrm{raw}} = D(\hat y)`$:
 
 ```math
-E'(x) = f(b(x)) + c\,a(x).
+y^\star \approx \arg\min_{t \in \mathcal{F}_m(s)} \lVert t - E'(x_{\mathrm{raw}}) \rVert_2
 ```
 
-It has an exact write $`W(v, b)`$ with $`E'(W(v, b)) = v`$, so the decoder can always produce an image that re-encodes
-to the received symbols. For 8-bit storage, a repair step searches for a stored image that re-encodes exactly, with an
-escalation ladder of larger budgets. NLBP samples from a frozen prior and corrects every step with the same write:
+```math
+\mathcal{F}(s) = \{\, t : Q_y(t; \hat z) = s_y \,\} \cap \{\, t : Q_z(h_a(t)) = s_z \,\}
+```
+
+where $`\mathcal{F}_m(s)`$ keeps margins inside the main and hyper cells. The search runs on the receiver only, with
+frozen copies of the codec's networks, and a target is accepted only when the codec's quantizers return $`s`$.
+
+The image is then written to hit the target exactly: $`\tilde x = W(y^\star, b(x_{\mathrm{raw}}))`$ with
+$`E'(\tilde x) = y^\star`$, so re-encoding $`\tilde x`$ gives the same symbols, and every later round returns the same
+file and the same image. The exact write comes from a fixed, training-free wrapper of the encoder,
+$`E'(x) = f(b(x)) + c\,a(x)`$, built from a patch-PCA basis. For 8-bit storage, a repair step searches for a stored
+image whose re-encoding still gives $`s`$, with an escalation ladder of larger budgets.
+
+NLBP lets a frozen generative prior decode the same bitstream. At every sampling step the prior's clean estimate
+$`u_t`$ is pulled toward the target, with $`y_t = E'(u_t)`$:
 
 ```math
 \begin{aligned}
@@ -38,8 +52,8 @@ v_t^+ &= (1 - \lambda_t)\,y_t + \lambda_t\,y^\star,
 \end{aligned}
 ```
 
-where $`u_t`$ is the prior's clean estimate, $`y_t = E'(u_t)`$ and $`y^\star`$ the target selected from the received
-symbols. A codec plugs in through a small adapter (`adapters/<codec>/`); everything else is codec-agnostic.
+so the output still encodes to the received symbols. A codec plugs in through a small adapter (`adapters/<codec>/`);
+everything else is codec-agnostic.
 
 ## Install
 
