@@ -11,43 +11,48 @@ configuration per reported variant.
 
 ## The method (plug-and-play)
 
-A codec is used only through a small interface: its analysis transform E, synthesis D, hyper-analysis h_a, its own
-quantizers and entropy coder, and its file format. Around E we put a fixed linear wrapper built from a patch-PCA basis
-(the only fitted component; the codec is not trained): E'(x) = f(b(x)) + c a(x). The wrapper has an exact write
-W(v, b) with E'(W(v, b)) = v, hence a right inverse D'(v) = W(v, b(D(v))). The encoder sends the codec's own record in
-round 1 and the record of E'(x) in later rounds. The decoder never sees the source image: from the received symbols it
-selects a target latent y* inside the cells of the record (target search with margins), writes the image with W, and,
-depending on the storage protocol, repairs the image so that re-encoding reproduces the same symbols (clipped-float
-range repair; 8-bit target correction, lattice search, per-symbol hyper repair, escalation ladder; HPCM outer
-stabilization). NLBP replaces the image W(y*, b(D(y_hat))) by a sample of a frozen prior, corrected at every step so
-that the output still writes y*. Everything after the codec interface is codec-agnostic: adding a codec = writing its
-adapter.
+A codec is used only through a small interface: its analysis transform $`E`$, synthesis $`D`$, hyper-analysis
+$`h_a`$, its own quantizers and entropy coder, and its file format. Around $`E`$ we put a fixed linear wrapper built from
+a patch-PCA basis (the only fitted component; the codec is not trained):
+
+```math
+E'(x) = f(b(x)) + c\,a(x).
+```
+
+The wrapper has an exact write $`W(v, b)`$ with $`E'(W(v, b)) = v`$, hence a right inverse $`D'(v) = W(v, b(D(v)))`$
+with $`E'(D'(E'(x))) = E'(x)`$. The encoder sends the codec's own record in round 1 and the record of $`E'(x)`$ in later
+rounds. The decoder never sees the source image: from the received symbols it selects a target latent $`y^\star`$ inside
+the cells of the record (target search with margins), writes the image with $`W`$, and, depending on the storage
+protocol, repairs the image so that re-encoding reproduces the same symbols (clipped-float range repair; 8-bit target
+correction, lattice search, per-symbol hyper repair, escalation ladder; HPCM outer stabilization). NLBP replaces the
+image $`W(y^\star, b(D(\hat y)))`$ by a sample of a frozen prior, corrected at every step so that the output still
+writes $`y^\star`$. Everything after the codec interface is codec-agnostic: adding a codec = writing its adapter.
 
 ## Notation and code names
 
 | Paper | Code | Where |
 |---|---|---|
-| E, D | `base_encode`, `base_decode` | `adapted_codec/codec_ops.py`, `adapters/<codec>/` |
-| h_a, Q_z, Q_y | `hyper`, `quantize_main` | codec interface |
-| s = (s_y, s_z), Sigma | `symbol_record` (z_hat, y_hat and bits) | `adapted_codec/encoder.py` |
-| mu_PCA, U_0, U_1 | `PCAWrapper.mu`, `U` (rows split at k) | `adapted_codec/wrapper.py`, `adapted_codec/pca_basis.py` |
-| a(x), b(x), J(a, b) | `split(x)` -> (a, b), `join(a, b)` | `adapted_codec/wrapper.py` (AEIC: `adapters/aeic/wrapper.py`) |
-| f(b) = E(J(0, b)), gain c | `E(join(0, b))`, `c` | wrapper |
-| E'(x) = f(b(x)) + c a(x) | `wrapped_encoder`, `wrapped_encode` | wrapper, codec interface |
-| W(v, b), D'(v) | `write(x_raw, v)` = W(v, b(x_raw)) | `adapted_codec/codec_ops.py`, `adapters/aeic/wrapper.py` |
-| F_m(s), y*, margins m_y, m_z | `select_target`, `search_target`, `margin_y`, `margin_z` | `adapted_codec/target_search.py`, `adapters/aeic/codec.py` |
+| $`E`$, $`D`$ | `base_encode`, `base_decode` | `adapted_codec/codec_ops.py`, `adapters/<codec>/` |
+| $`h_a`$, $`Q_z`$, $`Q_y`$ | `hyper`, `quantize_main` | codec interface |
+| $`s = (s_y, s_z)`$, $`\Sigma`$ | `symbol_record` (z_hat, y_hat and bits) | `adapted_codec/encoder.py` |
+| $`\mu_{\mathrm{PCA}}`$, $`U_0`$, $`U_1`$ | `PCAWrapper.mu`, `U` (rows split at k) | `adapted_codec/wrapper.py`, `adapted_codec/pca_basis.py` |
+| $`a(x)`$, $`b(x)`$, $`J(a, b)`$ | `split(x)` -> (a, b), `join(a, b)` | `adapted_codec/wrapper.py` (AEIC: `adapters/aeic/wrapper.py`) |
+| $`f(b) = E(J(0, b))`$, gain $`c`$ | `E(join(0, b))`, `c` | wrapper |
+| $`E'(x) = f(b(x)) + c\,a(x)`$ | `wrapped_encoder`, `wrapped_encode` | wrapper, codec interface |
+| $`W(v, b)`$, $`D'(v)`$ | `write(x_raw, v)` = $`W(v, b(x_{\mathrm{raw}}))`$ | `adapted_codec/codec_ops.py`, `adapters/aeic/wrapper.py` |
+| $`F_m(s)`$, $`y^\star`$, margins $`m_y`$, $`m_z`$ | `select_target`, `search_target`, `margin_y`, `margin_z` | `adapted_codec/target_search.py`, `adapters/aeic/codec.py` |
 | refinement toward the projected start | `refine_target` | `adapted_codec/refinement.py`, `adapters/aeic/codec.py` |
-| acceptance Sigma(E'(x)) = s | `is_feasible` | `adapted_codec/acceptance.py` |
-| S_8 | `store01`, `store11` | `adapted_codec/protocols/storage.py` |
+| acceptance $`\Sigma(E'(x)) = s`$ | `is_feasible` | `adapted_codec/acceptance.py` |
+| $`S_8`$ | `store01`, `store11` | `adapted_codec/protocols/storage.py` |
 | clipped-float range repair | `range_repair`, `decode_clipped` | `adapted_codec/protocols/clipped_float/range_repair.py` |
-| 8-bit closed loop, target update (gamma_y, gamma_z) | `corrected_write` | `adapted_codec/protocols/eight_bit/target_correction.py`, `adapters/aeic/codec.py` |
-| lattice merit (eta_y, eta_z), 9,056 trials | `lattice_search` | `.../eight_bit/lattice_repair.py` |
+| 8-bit closed loop, target update ($`\gamma_y`$, $`\gamma_z`$) | `corrected_write` | `adapted_codec/protocols/eight_bit/target_correction.py`, `adapters/aeic/codec.py` |
+| lattice merit ($`\eta_y`$, $`\eta_z`$), 9,056 trials | `lattice_search` | `.../eight_bit/lattice_repair.py` |
 | per-symbol hyper repair | `repair_hyper_symbols` | `.../eight_bit/hyper_symbol_repair.py` |
 | escalation ladder, box step | `escalation_decode`, `escalation_write`, `box_step_decode`; AEIC: `EscalatedAeic` | `.../eight_bit/escalation.py`, `box_step.py`, `adapters/aeic/chain.py` |
 | HPCM outer stabilization | `decode` (stabilization_states = 4) | `.../eight_bit/decoder.py` |
-| NLBP update (v_t^+, b_t^+), lambda_t, kappa, v_ref | `nlbp_update`, `lambda2` -> `lambda1`, `kz`, `target` | `nlbp/update.py` |
-| NLBP sampler, start noise omega, steps | `nlbp_decode`, `t0` (omega = snapped time of t0), `stride` | `nlbp/sampler.py`, `nlbp/schedule.py` |
-| final b refinement (K Adam steps), final write | `TargetWrite.opt`, `opt_K` | `nlbp/final_write.py` |
+| NLBP update ($`v_t^+`$, $`b_t^+`$), $`\lambda_t`$, $`\kappa`$, $`v_{\mathrm{ref}}`$ | `nlbp_update`, `lambda2` -> `lambda1`, `kz`, `target` | `nlbp/update.py` |
+| NLBP sampler, start noise $`\omega`$, steps | `nlbp_decode`, `t0` ($`\omega`$ = snapped time of `t0`), `stride` | `nlbp/sampler.py`, `nlbp/schedule.py` |
+| final $`b`$ refinement ($`K`$ Adam steps), final write | `TargetWrite.opt`, `opt_K` | `nlbp/final_write.py` |
 
 Every setting is a field of `adapted_codec/settings.py` (AEIC: also `AeicSettings` in `adapters/aeic/codec.py`; NLBP:
 the configuration keys of `nlbp/sampler.py`) and is set per reported variant in `configs/*.yaml` and
@@ -163,13 +168,33 @@ bpp: all entropy-coded streams and transmitted side information, without contain
 
 ## NLBP
 
-`nlbp/` holds the decoder-side generative method: `update.py` (y_t = E'(u_t), v_t^+ = (1 - lambda_t) y_t + lambda_t y*,
-b_t^+ = b(u_t) + kappa lambda_t [r_ref - b(D_ref(y_t))], x = W(v_t^+, b_t^+)), `sampler.py` (schedule, start
-x = (1 - omega) x_base + omega eps, the loop on the prior's clean estimate, the final write; `nlbp_decode_latent` for
-latent-space priors, which decodes the clean latent before the image-space update), `final_write.py` (K Adam steps on b,
-exact write W(y*, b)), `receiver.py` (x_base = W(y*, b(D(y_hat))), r_ref, the seed derived from the received symbols),
-`codec_interface.py` (D_ref, b, W, E' on [-1, 1] images), `schedule.py` (time grid), `priors/` (prior(x_s, s) -> v
-adapters) and `configs/` (the reported configurations, equal to the stored ones of the reported runs).
+`nlbp/` holds the decoder-side generative method. From the received symbols the receiver selects $`y^\star`$ and forms
+$`x_{\mathrm{base}} = W(y^\star, b(D(\hat y)))`$; sampling starts from
+$`x = (1 - \omega)\,x_{\mathrm{base}} + \omega\,\epsilon`$. At every step the frozen prior's clean estimate $`u_t`$
+is corrected, with $`y_t = E'(u_t)`$:
+
+```math
+\begin{aligned}
+v_t^+ &= (1 - \lambda_t)\,y_t + \lambda_t\,y^\star,
+\\ b_t^+ &= b(u_t) + \kappa\lambda_t\,\big[r_{\mathrm{ref}} - b(D_{\mathrm{ref}}(y_t))\big],
+\\ u_t^+ &= W(v_t^+, b_t^+),
+\end{aligned}
+```
+
+where $`D_{\mathrm{ref}}`$ is the codec's own synthesis and $`r_{\mathrm{ref}} = b(D_{\mathrm{ref}}(v_{\mathrm{ref}}))`$
+for a fixed $`v_{\mathrm{ref}} \in \{\hat y, y^\star\}`$. After the last step, $`K`$ Adam steps refine $`b`$ and the
+output is the exact write $`W(y^\star, b)`$.
+
+| File | Contents |
+|---|---|
+| `update.py` | the update above |
+| `sampler.py` | schedule, start, the loop on the prior's clean estimate, the final write; `nlbp_decode_latent` for latent-space priors (decodes the clean latent, then the image-space update) |
+| `final_write.py` | the $`K`$ Adam steps on $`b`$ and the exact write $`W(y^\star, b)`$ |
+| `receiver.py` | $`x_{\mathrm{base}}`$, $`r_{\mathrm{ref}}`$, the seed derived from the received symbols |
+| `codec_interface.py` | $`D_{\mathrm{ref}}`$, $`b`$, $`W`$, $`E'`$ on images in $`[-1, 1]`$ |
+| `schedule.py` | time grid |
+| `priors/` | prior adapters, $`(x_s, s) \mapsto v`$ |
+| `configs/` | the reported configurations, equal to the stored ones of the reported runs |
 
 ELIC on FFHQ (first decode, 8-bit; weights and data above, Xu et al.'s repository in `third_party/xu/src`):
 
@@ -182,8 +207,8 @@ python scripts/run_nlbp.py --config nlbp/configs/elic_ffhq_rate5.yaml --images 0
 python scripts/compare_smoke.py tests/smoke_expectations/nlbp_elic_ffhq.csv runs/nlbp
 ```
 
-Per image the sender writes the codec's own file (`nlbp_g1.bin`); the receiver reads only that file, selects y*,
-runs NLBP, applies the 8-bit repair toward y*_8 and stores `nlbp_g1.png`; `rows.csv` holds the file and PNG md5, the
+Per image the sender writes the codec's own file (`nlbp_g1.bin`); the receiver reads only that file, selects $`y^\star`$,
+runs NLBP, applies the 8-bit repair toward $`y^\star_8`$ and stores `nlbp_g1.png`; `rows.csv` holds the file and PNG md5, the
 symbol check of the file, `fmt_pass` (re-encoding the stored PNG gives the received record) and the PSNR. The test set
 is 00000 ... 00999.
 
@@ -197,7 +222,7 @@ python scripts/compare_smoke.py tests/smoke_expectations/nlbp_hpcm_kodak.csv run
 ```
 
 (`hpcm_kodak_pixnerd_s0{20,30,35,65}.yaml`: the other start-noise points.) The sender writes HPCM's own file
-(`nlbp_g1.bin`); the receiver reads only that file, selects y* under the float margins, runs NLBP with the prior
+(`nlbp_g1.bin`); the receiver reads only that file, selects $`y^\star`$ under the float margins, runs NLBP with the prior
 (PixNerd in pixel space; Z-Image and FLUX.2 [dev] in latent space, served by `nlbp/priors/latent_server.py` in the
 prior environment) and stores the float output as the 8-bit PNG `nlbp_g1.png` (`evaluation/png_io.py`). `rows.csv`
 holds the digest of the sent streams, `full_sym_eq` / `full_bytes_eq` (re-encoding the float output gives the received
