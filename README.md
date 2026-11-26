@@ -4,6 +4,13 @@ Raz Haim and Assaf Shocher, Technion - Israel Institute of Technology
 
 [Paper (arXiv)](https://arxiv.org/abs/2611.31520) | [Project page](https://assafshocher.github.io/your-codec/)
 
+![Recompression with and without the adapter, PSNR over rounds, and NLBP decoders of the same bitstream](assets/teaser.png)
+
+*(a) An image after 1, 10, 20 and 50 recompressions, with and without our adapter. (b) PSNR across recompression
+rounds against methods designed for idempotency, at a common initial bitrate, on Kodak. (c) Nonlinear back-projection
+controls the perception-distortion trade-off: each curve varies the decoding while the transmitted bitstreams stay
+fixed.*
+
 The method makes a frozen, pretrained learned image codec idempotent under recompression, without any training, and
 lets a frozen generative prior decode the same bitstream (NLBP, nonlinear back-projection). This repository holds the
 code of the reported results: a codec-agnostic core, thin per-codec adapters, NLBP, the evaluation, and one
@@ -74,6 +81,7 @@ configs/           one yaml per reported variant
 evaluation/        PSNR, MS-SSIM, LPIPS, DISTS, patch FID / KID, payload bpp (score_chains.py), 8-bit PNG of NLBP
 scripts/           run_chain.py, run_nlbp.py, prepare_256.py, prepare_ffhq256.py, build_aeic_coder.sh, compare_smoke.py
 tests/             CPU self-test, upstream-copy and patch tests, smoke expectations
+assets/            README figure
 pca/               the patch-PCA bases: 16 x 16 Vimeo90K (all codecs but AEIC), 32 x 32 CLIC 2020 (AEIC)
 ```
 
