@@ -166,6 +166,12 @@ The rates of each variant are listed in its config (`rates:`). The plain codec o
 patches of 64 x 64, `--protocol kodak64`; high resolution: 256 x 256 patches, `--protocol 2k256`). Rates are payload
 bpp: all entropy-coded streams and transmitted side information, without container framing.
 
+HPCM, 8-bit: the reported run (`hpcm_kodak_8bit_stabilized`) kept the first file in 137 of 144 chains; in the other
+7 the outer stabilization accepted a different record, so the file changed once, at round 2, and the image stayed
+fixed. With the escalation ladder (`hpcm_kodak_8bit_ladder`, the method), these 7 chains keep their first file as
+well, so all 144 chains (6 rates x 24 images) are file-exact and image-exact over 50 rounds. The other 137 chains
+never reach the ladder and decode identically under both configurations.
+
 ## NLBP
 
 `nlbp/` holds the decoder-side generative method. From the received symbols the receiver selects $`y^\star`$ and forms
