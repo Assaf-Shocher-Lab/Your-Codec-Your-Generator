@@ -1,0 +1,2 @@
+variant,rate,image,gen,md5_file,md5_png_file,psnr,check_sym_eq_file,check_fmt_pass
+elic_ffhq_rate4,xu4,00000,1,f0ed7dab84a92826a29509fea72b69f2,778229999eed513d71c2007245578df3,33.9500,1,1

@@ -1,0 +1,3 @@
+variant,rate,image,gen,md5_png_file,psnr,psnr_f,check_digest,check_re_digest,check_sym_eq_file,check_full_sym_eq,check_full_bytes_eq,check_steps,check_nbytes
+hpcm_kodak_pixnerd_s045,0.0018,kodim05,1,51d85d735d1f6b295ccb9677caaaf928,24.83117506006648,24.839590287144574,7aab8d452cf9167f,7aab8d452cf9167f,1,1,1,45,9712
+hpcm_kodak_zimage_s045,0.0018,kodim05,1,13bdc038278c3458b3b2ee143753abf3,24.452479237350847,24.43100680261181,7aab8d452cf9167f,7aab8d452cf9167f,1,1,1,23,9712

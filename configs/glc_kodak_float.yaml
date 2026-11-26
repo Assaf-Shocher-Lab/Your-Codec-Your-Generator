@@ -1,0 +1,21 @@
+# GLC (image model, one checkpoint for q = 0..3), Kodak, float chain (in memory). Equality on the symbol file; the rate
+# is GLC's estimated rate (no entropy coder). Search over the codeword regions from the received y_hat.
+codec: glc
+protocol: float
+dataset: kodak
+rates: ["0", "1", "2", "3"]             # quality index q (q0 = the lowest rate)
+weights: weights/glc/GLC_image.pth.tar
+method: adapted
+pca: pca/pca_vimeo1000_f16.pt   # 16 x 16 patches, 1,000 Vimeo90K frames ([-1, 1] images); k = 256
+gain: 10.0                              # c
+settings:
+  encoder: variant_a                    # round 1: Q(E(x)); rounds >= 2: Q(E'(x))
+  search_steps: 400
+  search_lr: 0.002
+  margin_y: 0.02                        # m_y, fraction of the quantization step
+  margin_z: 0.0001                      # m_z, squared-distance gap to the 8 nearest other codewords
+  pad_rows: 96
+  pad_iters: 1000
+  pad_lr: 0.002
+  pad_cell_margin: 0.08
+  chain_format: none

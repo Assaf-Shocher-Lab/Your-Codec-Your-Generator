@@ -1,0 +1,4 @@
+variant,rate,image,gen,md5_file,psnr
+hpcm_kodak_clipped_float,0.0035,kodim01,1,3ff3eabf3f6542d3aa88a0991a5d4c60,27.342023849487305
+hpcm_kodak_clipped_float,0.0035,kodim01,2,3ff3eabf3f6542d3aa88a0991a5d4c60,27.342023849487305
+hpcm_kodak_clipped_float,0.0035,kodim01,3,3ff3eabf3f6542d3aa88a0991a5d4c60,27.342023849487305

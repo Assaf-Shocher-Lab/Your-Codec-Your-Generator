@@ -1,0 +1,36 @@
+# TCM (N = 64, M = 320, MSE weights of the official repository), Kodak, 8-bit file chain; decoder = target search,
+# then the escalation ladder stages 0-2 (the box step is off: none of these rates reached it).
+codec: tcm
+protocol: file_chain
+dataset: kodak
+rates: ["0.0025", "0.0035", "0.0067", "0.013", "0.025"]
+weights: weights/tcm/TCM_N64_mse_{}.pth.tar
+method: tcm_adapted
+pca: pca/pca_vimeo1000_f16.pt   # 16 x 16 patches, 1,000 Vimeo90K frames
+gain: 10.0                              # c
+settings:
+  encoder: variant_a                    # round 1: Q(E(x)); rounds >= 2: Q(E'(x))
+  search_start: proj
+  search_steps: 400
+  search_lr: 0.01
+  margin_y: 0.06                        # m_y (8-bit)
+  margin_z: 0.02                        # m_z
+  refine_steps: 200
+  refine_lr: 0.003
+  refine_weight: 100.0
+  pad_rows: 96
+  pad_iters: 1000
+  pad_lr: 0.002
+  pad_cell_margin: 0.08
+  chain_format: png8
+  correction_budget: 30
+  context_free_count: 1
+  lattice_steps: 9056
+  lattice_trials: 9056                  # trials per lattice call
+  lattice_time_cap: 86000.0
+  lattice_scan: 64
+  lattice_group: 32
+  # escalation ladder (escalation_write): stages 0-2 = (budget, hyper guard) per stage, stage 3 = box step
+  ladder_stages: [[null, null], [60, null], [60, 0.10]]
+  box_step: 0
+  box_steps: 600

@@ -1,0 +1,4 @@
+variant,rate,image,gen,md5_file,md5_img,psnr255
+mean_scale_kodak_8bit,7,kodim20,1,ad9b436fe284553f0ae73b8cb8f876ab,d195db9f92a123aac1a3f504e8ac7406,38.971781
+mean_scale_kodak_8bit,7,kodim20,2,ad9b436fe284553f0ae73b8cb8f876ab,d195db9f92a123aac1a3f504e8ac7406,38.971781
+mean_scale_kodak_8bit,7,kodim20,3,ad9b436fe284553f0ae73b8cb8f876ab,d195db9f92a123aac1a3f504e8ac7406,38.971781

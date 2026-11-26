@@ -1,0 +1,24 @@
+# ELIC (re-implementation, its released weights), Kodak, float chain (in memory).
+protocol: float
+rates: ["0.004", "0.008", "0.016", "0.032", "0.15", "0.45"]
+method: adapted
+codec: elic
+dataset: kodak
+weights: weights/elic/ELIC_lambda{}.pth.tar
+pca: pca/pca_vimeo1000_f16.pt   # 16 x 16 patches, 1,000 Vimeo90K frames
+gain: 10.0                              # c
+settings:
+  encoder: variant_a                    # round 1: Q(E(x)); rounds >= 2: Q(E'(x))
+  search_start: proj
+  search_steps: 400
+  search_lr: 0.01
+  margin_y: 0.02                        # m_y (float)
+  margin_z: 0.02                        # m_z
+  refine_steps: 200
+  refine_lr: 0.003
+  refine_weight: 100.0
+  pad_rows: 96
+  pad_iters: 1000
+  pad_lr: 0.002
+  pad_cell_margin: 0.08
+  chain_format: none

@@ -1,0 +1,1 @@
+from ._hific_autoencoder import HiFiCAutoencoder

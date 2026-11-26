@@ -1,0 +1,4 @@
+variant,rate,image,gen,md5_file,md5_img,psnr255
+hyperprior_kodak_8bit,2,kodim01,1,1fd8663d498fcdb19a535c0d488a56f6,a3a9e5a693fd092cc74097245aec7a4e,26.841455
+hyperprior_kodak_8bit,2,kodim01,2,1fd8663d498fcdb19a535c0d488a56f6,a3a9e5a693fd092cc74097245aec7a4e,26.841455
+hyperprior_kodak_8bit,2,kodim01,3,1fd8663d498fcdb19a535c0d488a56f6,a3a9e5a693fd092cc74097245aec7a4e,26.841455

@@ -1,0 +1,24 @@
+# HPCM-Large (MSE), Kodak, float chain (in memory): D'(s) = W(y*, b(D(y_hat))) passed on unclamped.
+protocol: float
+rates: ["0.0018", "0.0035", "0.0067", "0.013", "0.025", "0.0483"]
+method: adapted
+codec: hpcm
+dataset: kodak
+weights: weights/hpcm/HPCM_Large_mse_{}.pth
+pca: pca/pca_vimeo1000_f16.pt   # 16 x 16 patches, 1,000 Vimeo90K frames
+gain: 10.0                              # c
+settings:
+  encoder: variant_a                    # round 1: Q(E(x)); rounds >= 2: Q(E'(x))
+  search_start: proj
+  search_steps: 4000
+  search_lr: 0.003
+  margin_y: 0.02                        # m_y (float)
+  margin_z: 0.002                       # m_z
+  refine_steps: 200
+  refine_lr: 0.003
+  refine_weight: 100.0
+  pad_rows: 96
+  pad_iters: 1000
+  pad_lr: 0.002
+  pad_cell_margin: 0.08
+  chain_format: none

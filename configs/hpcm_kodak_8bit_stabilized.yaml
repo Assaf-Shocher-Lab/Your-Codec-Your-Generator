@@ -1,0 +1,35 @@
+# HPCM-Large (MSE), Kodak, 8-bit file chain; decoder D_8 with the outer stabilization (HPCM only).
+codec: hpcm
+protocol: file_chain
+dataset: kodak
+rates: ["0.0018", "0.0035", "0.0067", "0.013", "0.025", "0.0483"]
+weights: weights/hpcm/HPCM_Large_mse_{}.pth
+pca: pca/pca_vimeo1000_f16.pt   # 16 x 16 patches, 1,000 Vimeo90K frames
+gain: 10.0                              # c
+method: hpcm_adapted
+settings:
+  encoder: variant_a                    # round 1: Q(E(x)); rounds >= 2: Q(E'(x))
+  search_start: proj
+  search_steps: 4000
+  search_lr: 0.003
+  margin_y: 0.06                        # m_y (8-bit)
+  margin_z: 0.002                       # m_z
+  refine_steps: 200
+  refine_lr: 0.003
+  refine_weight: 100.0
+  pad_rows: 96
+  pad_iters: 1000
+  pad_lr: 0.002
+  pad_cell_margin: 0.08
+  chain_format: png8
+  correction_budget: 30
+  context_free_count: 1
+  lattice_steps: 9056
+  lattice_trials: 9056                  # trials per lattice call
+  lattice_time_cap: 86000.0
+  lattice_scan: 64
+  lattice_group: 32
+  fast_s8: 1                            # S_8 inside the search trials by lookup table (same values)
+  fast_s8_audit: 0
+  stabilization_states: 4               # outer stabilization: at most 4 states
+  stabilization_candidates: [1]

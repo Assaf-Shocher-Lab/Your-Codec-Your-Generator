@@ -1,0 +1,13 @@
+--- a/Network.py
++++ b/Network.py
+@@ -519,6 +519,10 @@
+             y_hat_slices.append(y_slice_hat)
+         y_hat = torch.cat(y_hat_slices, dim=1)
+ 
++        # --- adapted codec: begin (the file reader gets the decoded record (z_hat, y_hat), not the image) ---
++        if getattr(self, "pair_only", False):
++            return {"z_hat": z_hat, "y_hat": y_hat}
++        # --- adapted codec: end ---
+         import time
+         y_dec_start = time.time()
+         x_hat = self.g_s(y_hat).clamp_(0, 1)

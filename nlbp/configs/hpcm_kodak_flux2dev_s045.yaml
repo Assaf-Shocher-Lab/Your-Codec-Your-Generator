@@ -1,0 +1,24 @@
+# NLBP, HPCM 0.0018 on Kodak, prior flux2_dev, first decode, float storage.
+# Parameters = the stored configuration of the reported run (nlbp/sampler.py names); opt_lr from the cell or the runner default.
+codec: hpcm
+codec_config: nlbp/configs/hpcm_kodak_codec.yaml   # weights, PCA basis, gain, prior files, settings
+rate: "0.0018"
+prior: flux2_dev
+storage: float
+variant: R1
+target: yhat                # v_ref
+latent: 1                # 1: latent-space prior (child process)
+lat_up: 1
+vae_residual: 1                # 1: x_0 = D' + Dec(z_0) - Dec(Enc(D'))
+upsample: 1
+prompt: generic
+cfg: 1.0
+s0: 0.45                # omega (start noise); t0 = the DDPM index whose snapped flow time is nearest (sampler.resolve)
+stride: 10
+lambda2: 1.0                # early lambda_t
+lambda1: 0.3451168                # late lambda_t
+kz: 1.0                # kappa
+opt_K: 10                # K
+opt_lr: 0.003
+snap: flow                    # schedule.snap_s (shifted flow grid)
+shift: 4.0

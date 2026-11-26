@@ -1,0 +1,21 @@
+# NLBP, HPCM 0.0018 on Kodak, prior pixnerd_xxl16_t2i, first decode, float storage.
+# Parameters = the stored configuration of the run (other start noise) (nlbp/sampler.py names); opt_lr from the cell or the runner default.
+codec: hpcm
+codec_config: nlbp/configs/hpcm_kodak_codec.yaml   # weights, PCA basis, gain, prior files, settings
+rate: "0.0018"
+prior: pixnerd_xxl16_t2i
+storage: float
+variant: R1
+target: ystar                # v_ref
+upsample: 1
+prompt: empty
+cfg: 1.0
+s0: 0.2                # omega (start noise); t0 = the DDPM index whose snapped flow time is nearest (sampler.resolve)
+stride: 5
+lambda2: 1.0                # early lambda_t
+lambda1: 0.3451168                # late lambda_t
+kz: 0.4                # kappa
+opt_K: 10                # K
+opt_lr: 0.003
+snap: ddpm                    # priors/ddpm.snap_ddpm (DDPM index grid)
+shift: 1.0

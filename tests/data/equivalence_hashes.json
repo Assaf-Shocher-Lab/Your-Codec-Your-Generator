@@ -1,0 +1,1310 @@
+{
+ "adapted_codec/acceptance.py::is_feasible": {
+  "md5": "60ecaec9118e7c8a4e62400c0f4e9785",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::Adapter": {
+  "md5": "613b56c5176f0418ab41660ab9e8491f",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::Adapter.assert_no_encoder_state": {
+  "md5": "d484eb84b864330a786e55eb4dad2eef",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::Adapter.bitstream_of": {
+  "md5": "55fc61e0ac82f5aca750f9c30b1999e8",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::Adapter.device_name": {
+  "md5": "9003c820c79a028b770dcce223187488",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::Decoded": {
+  "md5": "57926b3d0e15eeb4910246ecec8b4f9e",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::Decoded.__init__": {
+  "md5": "ee8465e8d256adb9bf71c8e0b88a9d16",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::_sync": {
+  "md5": "0187bf8dd0e58987c52772b8b3161a36",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::chain_done": {
+  "md5": "049f80614b565792f49ebd3549e34fe0",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::decoded_to_x01": {
+  "md5": "be6ad3a7674956c40f7dca5fa1ecb18b",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::load_png_u8": {
+  "md5": "0211d16477d0b4ac6516b89a78c7d122",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::md5_arrays": {
+  "md5": "264e2f53ffb2d6787025a9ca868738be",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::md5_bytes": {
+  "md5": "9406de760d072c187bdd869c647a10e9",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::png_roundtrip": {
+  "md5": "c6efcce6ff07dbc4ba9f73e6ce2ebba4",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::psnr255": {
+  "md5": "8666a9fcad7ec5f5565dd0ecde079679",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::run_chain": {
+  "md5": "072f9e7202d2ba23e0982e69fd351825",
+  "prefix": null
+ },
+ "adapted_codec/chain.py::to_u8": {
+  "md5": "98dd9569a215f931305f7f842c5dcc94",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps": {
+  "md5": "03d1c92ebce3652bb8eb45507f2f612a",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps.__init__": {
+  "md5": "3a9e7f430b2de5f6128535e0813b775c",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps.base_decode": {
+  "md5": "2299d513be3c6d815c56352b5aa3fc64",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps.base_encode": {
+  "md5": "908776003c3ca622b4aed38619e5938c",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps.decode": {
+  "md5": "8317f3ad0738cf8b11b91c13a257aaec",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps.hyper": {
+  "md5": "36e775862fff82bd641bb7926d50af9e",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps.quantize_main": {
+  "md5": "76b729f4b7edae14f4a1baeffa9c64ae",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps.wrapped_encode": {
+  "md5": "568d7e80f1eada567d3fc113a0401527",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps.write": {
+  "md5": "37f6b88ae2ed89f2256f960a9551abf0",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::HyperpriorOps.z_offset": {
+  "md5": "1426f2679773213bcf7a3c7ae47faaf3",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::MeanScaleOps": {
+  "md5": "5d89677cc4a8f960ff3a3d77ba257725",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::MeanScaleOps.hyper": {
+  "md5": "74150880c144d2ace687f3cb3612161f",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::MeanScaleOps.quantize_main": {
+  "md5": "4cfe2bb7e8103060ecf55da28ff98449",
+  "prefix": null
+ },
+ "adapted_codec/codec_ops.py::encode_bytes": {
+  "md5": "28b81f85bd6fca27421829cd1536e0b6",
+  "prefix": null
+ },
+ "adapted_codec/determinism.py::set_exact_math": {
+  "md5": "9bb53ac362a1f0ad300ff3a0c9972d1e",
+  "prefix": null
+ },
+ "adapted_codec/encoder.py::encode": {
+  "md5": "e2012ad8afb43efef54627b81766e83c",
+  "prefix": 1
+ },
+ "adapted_codec/encoder.py::pair_bits": {
+  "md5": "2dabb0892785ec22901d4329af935f3f",
+  "prefix": null
+ },
+ "adapted_codec/encoder.py::symbol_record": {
+  "md5": "fa574420d5b1db7581bb907be950fe76",
+  "prefix": null
+ },
+ "adapted_codec/pad_repair.py::pad_repair": {
+  "md5": "afaf10c655af8584a674a4d50ea4da57",
+  "prefix": null
+ },
+ "adapted_codec/pad_repair.py::pad_to": {
+  "md5": "94f23a41d702572ee2b9464d2fd5337e",
+  "prefix": null
+ },
+ "adapted_codec/pad_repair.py::reflect_pad": {
+  "md5": "895ad2270fc98749b1a660b92b8752c4",
+  "prefix": null
+ },
+ "adapted_codec/pca_basis.py::fit_patch_pca": {
+  "md5": "f40bdf7bb066dc31892a25254b82079f",
+  "prefix": null
+ },
+ "adapted_codec/pca_basis.py::pca_unit_range": {
+  "md5": "936b5724bda42d7f29c9829e9a4a3996",
+  "prefix": null
+ },
+ "adapted_codec/pca_basis.py::with_k": {
+  "md5": "dea29ee3909ff9e506826e3e37e50894",
+  "prefix": null
+ },
+ "adapted_codec/png16.py::_chunk": {
+  "md5": "42bb992306df3d5ae8fc66a40aef178e",
+  "prefix": null
+ },
+ "adapted_codec/png16.py::read_png16": {
+  "md5": "1ad1484508ac53484d7baedfd32dc592",
+  "prefix": null
+ },
+ "adapted_codec/png16.py::write_png16": {
+  "md5": "f226bbd3c289d5d028411e806ee0ca1b",
+  "prefix": null
+ },
+ "adapted_codec/protocols/clipped_float/range_repair.py::decode_clipped": {
+  "md5": "d1f912e1eb3b75a7382c773433150613",
+  "prefix": null
+ },
+ "adapted_codec/protocols/clipped_float/range_repair.py::range_repair": {
+  "md5": "889f3049e4bc52435e6508e75792f6f4",
+  "prefix": null
+ },
+ "adapted_codec/protocols/eight_bit/box_step.py::box_step_decode": {
+  "md5": "77b7a7215c6b742933a7b2457605f87e",
+  "prefix": null
+ },
+ "adapted_codec/protocols/eight_bit/decoder.py::decode": {
+  "md5": "8b90b4524633343a0b9405c1003a6edb",
+  "prefix": null
+ },
+ "adapted_codec/protocols/eight_bit/escalation.py::escalation_decode": {
+  "md5": "bee8790ab14c55c21ac8b0e1dfa0be5b",
+  "prefix": null
+ },
+ "adapted_codec/protocols/eight_bit/hyper_symbol_repair.py::repair_hyper_symbols": {
+  "md5": "9441ce3c9007ecf63d67c8a6bd76deff",
+  "prefix": null
+ },
+ "adapted_codec/protocols/eight_bit/lattice_repair.py::_lattice_better": {
+  "md5": "b4f4001f8443f09d26aa4031c9e82f27",
+  "prefix": null
+ },
+ "adapted_codec/protocols/eight_bit/lattice_repair.py::_lattice_budget_left": {
+  "md5": "8b7fa49235bee08adf9ee6f78f32bb3e",
+  "prefix": null
+ },
+ "adapted_codec/protocols/eight_bit/lattice_repair.py::lattice_search": {
+  "md5": "745104cf9fce9dbac136bdc50145f46b",
+  "prefix": null
+ },
+ "adapted_codec/protocols/eight_bit/target_correction.py::corrected_write": {
+  "md5": "8a729cef24cf65f3210afa38241b9d27",
+  "prefix": null
+ },
+ "adapted_codec/protocols/eight_bit/target_correction.py::decode_once": {
+  "md5": "87559f4f8b13b9d867cb26617b776e58",
+  "prefix": null
+ },
+ "adapted_codec/protocols/float_chain.py::decode_float": {
+  "md5": "afa90734e5fbbd96272ba5588593dcaa",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::_fast_s8": {
+  "md5": "c1ad681d4ed8cc997a519ea448fc3ce6",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::_png8_roundtrip": {
+  "md5": "10863a144ea3a9d63dc1715445761238",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::_png8_roundtrip_signed": {
+  "md5": "2531f6ef74fc6fdd3fdd11cf275b4c20",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::_store01_signed": {
+  "md5": "c62a7849558a9b708be0bc303d33ce3e",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::_store01_unsigned": {
+  "md5": "51dc8dbd470f723da9dc4b4964f9b296",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::png_bytes": {
+  "md5": "103a219fa4e956696e38d5ab5089304c",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::search_s8": {
+  "md5": "c28195d583d4414f57016e10ed9f9ca6",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::store11": {
+  "md5": "4335d412cfb56528e0decc79eac460d3",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::tensor_md5": {
+  "md5": "6df8edc016e0b016154b5a94a3241b93",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::to_u8": {
+  "md5": "78e9710d84c96a21defcd98971d3394d",
+  "prefix": null
+ },
+ "adapted_codec/protocols/storage.py::u8_to01": {
+  "md5": "9bb26428d06e5e017e79d230b87fe0a4",
+  "prefix": null
+ },
+ "adapted_codec/refinement.py::refine_target": {
+  "md5": "46e7ad25a288307cae75caf546518b78",
+  "prefix": null
+ },
+ "adapted_codec/target_search.py::search_target": {
+  "md5": "2f80440dc818e5accddbb1064d200209",
+  "prefix": null
+ },
+ "adapted_codec/target_search.py::select_target": {
+  "md5": "0d168b6d78c47b2dc0f3bfbf7ae423b8",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::AnalysisTransform": {
+  "md5": "16a6acdbde53b2dea9782f2cd8753bbb",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::AnalysisTransform.__init__": {
+  "md5": "dd99293566c9666fee6efa1755927217",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::AnalysisTransform.encode": {
+  "md5": "1bbfad0d174fad86115c1a5b812f8cee",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::PCAWrapper": {
+  "md5": "3a147125beb8559bea43fd08fac564a5",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::PCAWrapper.E": {
+  "md5": "4d93b50f07cc4dcc4fb1fd9a7fa025df",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::PCAWrapper.__init__": {
+  "md5": "f1292bc6ab97222cd516e6ae43df7728",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::PCAWrapper.from_pca": {
+  "md5": "b4fc7857517c66e463f12adf4cbbfa89",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::PCAWrapper.join": {
+  "md5": "ef62fd675f62c9c9d4f2645ff4e8d20b",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::PCAWrapper.split": {
+  "md5": "39ffd126caba5b4967fe7b22565493f1",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::PCAWrapper.wrapped_encoder": {
+  "md5": "ce107b22c248fcb17cba860d8b8eb533",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::build_wrapper": {
+  "md5": "6451f004c6dd37c1f88dcbffc23d7ac3",
+  "prefix": null
+ },
+ "adapted_codec/wrapper.py::mix": {
+  "md5": "00eda09a4e1148ad3363c357ccb5608f",
+  "prefix": null
+ },
+ "adapters/aeic/__init__.py::add_third_party_paths": {
+  "md5": "ad9baee563ea3edd59089bd17663066a",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic": {
+  "md5": "175ab0874b6d94eae3dca95dd7889e1f",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.__init__": {
+  "md5": "095fd79effcdfb29aeb5c51f2d643077",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.consistent_decode": {
+  "md5": "86efc199fcaa98913140b60a11b4172f",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.corrected_write": {
+  "md5": "83177515eedd2a2dc0f4a1022c5577e0",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.encode": {
+  "md5": "76612fabedcac58d84207a19eaa2825a",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.is_feasible": {
+  "md5": "9604c106c87fbf07e89bc2ef65e0ba52",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.pad_repair": {
+  "md5": "74cd34362d2ca5e8eb3e6d517061c0a4",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.refine_target": {
+  "md5": "9813ddf1b026143e827ca4e74ac628dd",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.search_target": {
+  "md5": "6ed18ff8df04581e07a24bf31992198a",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.select_target": {
+  "md5": "64b2b0ba6c0e68e1ee594e252ea8dd17",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AdaptedAeic.start_point": {
+  "md5": "30a8c8b55fa0f0f56950789107688f46",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AeicSettings": {
+  "md5": "fff7a6aee61a02a755c0172a2b584e44",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::AeicSettings.__post_init__": {
+  "md5": "382fc19301f42e853fb7c9c1ee99ec7c",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::Pair": {
+  "md5": "f5a51b0d2b5a93686845030cf33a855c",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::colour_side_info": {
+  "md5": "f4a30f8057cc5ff81e7aa41928d39441",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::colour_stats": {
+  "md5": "e7f1d5f53d901db706005a92f95ac315",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::crop_and_colour_fix": {
+  "md5": "089d43d8af1a9bffc4ce3614e5306ec0",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::decode_symbols": {
+  "md5": "764c4414d7b81cdafd6e71cba8027ba9",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::encode_pair": {
+  "md5": "e597f048716b231a45bc82722ebf965d",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::needs_colour_fix": {
+  "md5": "231951278b9ff9a0a9a6a2a9dcd65494",
+  "prefix": null
+ },
+ "adapters/aeic/codec.py::stats_to_side": {
+  "md5": "0ab64182ecfdc3834e27ea2a9955d207",
+  "prefix": null
+ },
+ "adapters/aeic/file_format.py::Coder": {
+  "md5": "4ee12db003eddbddc49ed66117c2f762",
+  "prefix": null
+ },
+ "adapters/aeic/file_format.py::Coder.__init__": {
+  "md5": "36364c52638b61e0bc248dde95975bdf",
+  "prefix": null
+ },
+ "adapters/aeic/file_format.py::Coder.decode": {
+  "md5": "7cae57b5146b89b0f63bc95b053b5b8a",
+  "prefix": null
+ },
+ "adapters/aeic/file_format.py::Coder.encode": {
+  "md5": "c5918157223db95d72e7bb5e70eafc86",
+  "prefix": null
+ },
+ "adapters/aeic/model.py::load_aeic": {
+  "md5": "f9648239578a64714563059a59376306",
+  "prefix": null
+ },
+ "adapters/aeic/model.py::load_wrapped_encoder": {
+  "md5": "5a6aaf3a3ff80ef560ff0863242ffe31",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICCodecCopy": {
+  "md5": "0df5ad213a7cf68a483609f007d8c530",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICCodecCopy.inference": {
+  "md5": "8b51f34a25eb4924c2a6194830bcee99",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICCodecParts": {
+  "md5": "f740eb003e3e506d76f03c68d36d9b17",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICCodecParts.hyper_latent": {
+  "md5": "a2a3ae00f459b201c4526856efb42553",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICCodecParts.quantize_given_z": {
+  "md5": "baf22b1e9893aaa2de766a0907f3aa36",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICCoderCopy": {
+  "md5": "1137062e0852dea79c0019c05954314d",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICCoderCopy.compress": {
+  "md5": "a247144282e765e56dfc5c75d698115e",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICCoderCopy.decompress": {
+  "md5": "0796a88d2d63693a5660370813cf61aa",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICCoderCopy.my_build_indexes": {
+  "md5": "068e5fdf002c06d07befd1c2f5eba4aa",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICModelCopy": {
+  "md5": "17b6265d7d211bc870fba97821a1cd07",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AEICModelCopy.inference": {
+  "md5": "f87487049cadb4383893bdbdee26e63f",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AdaptedRequest": {
+  "md5": "c8e50f72b634e4ebee94d5a8600a2568",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::AdaptedRequest.__init__": {
+  "md5": "66678c44dbe58b1c0107e9b88c429c1c",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::adaptive_instance_normalization_side_info": {
+  "md5": "2833af7104722283fb96be037ebfb193",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::aeic_transform": {
+  "md5": "f1903b55b082329a526d25925f7b01d3",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::pad64": {
+  "md5": "24098d910eeba6530972df5aa1b53d6b",
+  "prefix": null
+ },
+ "adapters/aeic/upstream_copies.py::preprocess_image": {
+  "md5": "55549b772aee08d7b3457835b25b7b40",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::PatchPCA": {
+  "md5": "274b2c61d735c19124fad1087d0a71e9",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::PatchPCA.__init__": {
+  "md5": "7da81b11784a65199ca2a5affc6ba1bf",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::PatchPCA.join": {
+  "md5": "6ca4ec8e9e337ec08960fb6b5b67924f",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::PatchPCA.split": {
+  "md5": "7c8aec51ffdc8d2658f183a0e8c43691",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::PatchPCA.to": {
+  "md5": "e67a945fb150d261496e319d2827a868",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::WrappedEncoder": {
+  "md5": "4945757ed0e2f0f64a0d931748e566b6",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::WrappedEncoder.E": {
+  "md5": "dc4d61975a7c03b30a05e27d2376e6d9",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::WrappedEncoder.__call__": {
+  "md5": "6e6bd5b7a791ec0b8b814577d3e6a74e",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::WrappedEncoder.__init__": {
+  "md5": "2646402c1081f3335a43fff71a400562",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::WrappedEncoder.k": {
+  "md5": "7dd9819fa1723acca7d5a00ef82e870a",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::WrappedEncoder.to": {
+  "md5": "e35d829e8d702dae649549d1c68df5b0",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::WrappedEncoder.write": {
+  "md5": "d7ed9982288ced103f355f19d1b31fdd",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::channel_mix": {
+  "md5": "68f0a0f752830072e7058c45d9c5cb3e",
+  "prefix": null
+ },
+ "adapters/aeic/wrapper.py::weak_first": {
+  "md5": "6e75170419620c847d9c15aac9259a23",
+  "prefix": null
+ },
+ "adapters/elic/codec.py::ElicOps": {
+  "md5": "4e997b6c680c248cb3fc9c6704cdf3c7",
+  "prefix": null
+ },
+ "adapters/elic/codec.py::ElicOps._slices": {
+  "md5": "d356268f8c3549973caf973aa01c42c4",
+  "prefix": null
+ },
+ "adapters/elic/codec.py::ElicOps._support": {
+  "md5": "a04fd317c7d82daa8d2a7cb0b60e6ed9",
+  "prefix": null
+ },
+ "adapters/elic/codec.py::ElicOps.encode_bytes": {
+  "md5": "32800787480b807ed4339b84e2f647f6",
+  "prefix": null
+ },
+ "adapters/elic/codec.py::ElicOps.quantize_main": {
+  "md5": "eb7f1d492319f7a5cf289066a8dcceef",
+  "prefix": null
+ },
+ "adapters/elic/codec.py::_ab": {
+  "md5": "ff94a18cd7911afc051fa603c357b378",
+  "prefix": null
+ },
+ "adapters/elic/codec.py::_pack": {
+  "md5": "5556b7d6dcdd87ecf3c3e03b3230f95f",
+  "prefix": null
+ },
+ "adapters/elic/codec.py::_unpack": {
+  "md5": "2a073b55c6830694dc6fc8a2f30d3e15",
+  "prefix": null
+ },
+ "adapters/elic/codec.py::load_elic": {
+  "md5": "a255fd7c1e07d1f27d0a7d6bdc1279c1",
+  "prefix": null
+ },
+ "adapters/elic/file_format.py::Coder": {
+  "md5": "4ee12db003eddbddc49ed66117c2f762",
+  "prefix": null
+ },
+ "adapters/elic/file_format.py::Coder.__init__": {
+  "md5": "b49fb84c31551555ecfc2ac14fbc0b00",
+  "prefix": null
+ },
+ "adapters/elic/file_format.py::Coder.decode": {
+  "md5": "bef0416090ceee5bc874ece5240a8550",
+  "prefix": null
+ },
+ "adapters/elic/file_format.py::Coder.encode": {
+  "md5": "166a70cf7e44264d7a7a8a262703a3da",
+  "prefix": null
+ },
+ "adapters/elic/file_format.py::core_streams": {
+  "md5": "069f8cdd28cb8d22338aad14185f6a13",
+  "prefix": null
+ },
+ "adapters/elic/file_format.py::serialize_core": {
+  "md5": "dd540794d3e4cd0e5a73e625a4a983e4",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::EQ": {
+  "md5": "52f1337a747060b7eff19aca87a77abb",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::EQ.__init__": {
+  "md5": "5099f833fdfb38cb2cbfd4e43b27d8b6",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::EQ.encode": {
+  "md5": "8dbfee2bbf27bb52d403b237adaf6244",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::EQ.forward": {
+  "md5": "9b711925e956971c0fc9645cc7431f18",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::GLC": {
+  "md5": "cef0acb2a6da317e9ada02fa49d976f9",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::GLC.D": {
+  "md5": "055976fa74ddea1e4dc402affae1b4a9",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::GLC.__init__": {
+  "md5": "3c8368c6b12bb3b5049b929678296fc5",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::GLC.main": {
+  "md5": "5105656dfcb1c4781ba341a9346c569c",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::GLC.pad_repair": {
+  "md5": "a70f752ea9e6e0a8fa7f48173c352c89",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::GLC.search": {
+  "md5": "005fa2cd530bcaf8c0d68fe63f5c2ef1",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::GLC.z_of": {
+  "md5": "716291f9775adf0d41b4fc714d3c51dd",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::exact_math": {
+  "md5": "363fb6a518587d97eb676c5bd546991a",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::load_image": {
+  "md5": "6b432640a779374e7056a9b8c09db95a",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::psnr": {
+  "md5": "71c7f392e85a909aed429f77c6ce8554",
+  "prefix": null
+ },
+ "adapters/glc/codec.py::replicate_pad": {
+  "md5": "1310b4d78ace97915681fb4c6ae3356d",
+  "prefix": null
+ },
+ "adapters/glc/symbols.py::pack": {
+  "md5": "3ad5f081d5b2ccaef0f81e05a3d3d28f",
+  "prefix": null
+ },
+ "adapters/glc/symbols.py::sha256": {
+  "md5": "74002e12a1920421d326faad7fd209bd",
+  "prefix": null
+ },
+ "adapters/glc/symbols.py::unpack": {
+  "md5": "aef6dfe451a7f5580fabbf9cd8f94868",
+  "prefix": null
+ },
+ "adapters/glc/symbols.py::y_hat_from_symbols": {
+  "md5": "c692b7ab90e0fb95a222206c23603f7e",
+  "prefix": null
+ },
+ "adapters/hpcm/adapter.py::HpcmAdapter": {
+  "md5": "e4f01bba5d79609ad75f4c0b7489596a",
+  "prefix": null
+ },
+ "adapters/hpcm/adapter.py::HpcmAdapter.__init__": {
+  "md5": "bec18c8ef32b32f040a777cf4c129378",
+  "prefix": null
+ },
+ "adapters/hpcm/adapter.py::HpcmAdapter._tensor": {
+  "md5": "4ffd7cc52d30a25ab666bdc374a1c6b5",
+  "prefix": null
+ },
+ "adapters/hpcm/adapter.py::HpcmAdapter.assert_no_encoder_state": {
+  "md5": "9f9934321b465cf401ff59401e291142",
+  "prefix": null
+ },
+ "adapters/hpcm/adapter.py::HpcmAdapter.bitstream_of": {
+  "md5": "f1889869dee69437b575d79b0316da1e",
+  "prefix": null
+ },
+ "adapters/hpcm/adapter.py::HpcmAdapter.decode_from_file": {
+  "md5": "83c6db0cf0dc88229c79eec324c43e28",
+  "prefix": null
+ },
+ "adapters/hpcm/adapter.py::HpcmAdapter.device_name": {
+  "md5": "d1dea78bb83c7e43a70d0aed7bca8710",
+  "prefix": null
+ },
+ "adapters/hpcm/adapter.py::HpcmAdapter.encode_to_file": {
+  "md5": "953bd53f2cde6594d40f3d72b8953341",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::HpcmOps": {
+  "md5": "ecff7bb2b0f62407b8285786158aad6b",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::HpcmOps.__init__": {
+  "md5": "da8ccef1d81f49b4d91d2c5f95297993",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::HpcmOps._ctx": {
+  "md5": "c678e6ea531c575180ae7c85cf043e6d",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::HpcmOps.encode_bytes": {
+  "md5": "2f33ec7c62c0076b5c3f89dc76880168",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::HpcmOps.quantize_main": {
+  "md5": "cd724887aa92485e83f2e85fc86f145b",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::HpcmOps.z_offset": {
+  "md5": "79eb9c99f27b559e7525eb536d1e9e93",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::_EB": {
+  "md5": "f2aca81324dbc3bca8d8998b507efef7",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::_EB.__call__": {
+  "md5": "8f737c5837c903670088d45165914900",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::_EB.__init__": {
+  "md5": "b49fb84c31551555ecfc2ac14fbc0b00",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::_GC": {
+  "md5": "96bfe3d715fadbd0c97ffaa698df2189",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::_GC.__call__": {
+  "md5": "2387a17254f1049ec7e8a193de66baca",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::_GC.__init__": {
+  "md5": "b49fb84c31551555ecfc2ac14fbc0b00",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::_install_shims": {
+  "md5": "a2745bd8cf4a232debd960637e8e0678",
+  "prefix": null
+ },
+ "adapters/hpcm/codec.py::load_hpcm": {
+  "md5": "55a804e2f540e348ffe428b7e1e14872",
+  "prefix": null
+ },
+ "adapters/hpcm/file_format.py::Coder": {
+  "md5": "4ee12db003eddbddc49ed66117c2f762",
+  "prefix": null
+ },
+ "adapters/hpcm/file_format.py::Coder.__init__": {
+  "md5": "b49fb84c31551555ecfc2ac14fbc0b00",
+  "prefix": null
+ },
+ "adapters/hpcm/file_format.py::Coder.columns": {
+  "md5": "481819f1feff302c965cbc85911762a7",
+  "prefix": null
+ },
+ "adapters/hpcm/file_format.py::Coder.decode": {
+  "md5": "a36b4c8b1d061fdcb287bc0373e9e642",
+  "prefix": null
+ },
+ "adapters/hpcm/file_format.py::Coder.encode": {
+  "md5": "8320977eda90f4fd7fb9dcb4f9f643fe",
+  "prefix": null
+ },
+ "adapters/hpcm/file_format.py::own_codec_check": {
+  "md5": "4cb3b3179affd8133c1e9ed486fc20b2",
+  "prefix": null
+ },
+ "adapters/hyperprior/adapter.py::HyperpriorAdapter": {
+  "md5": "d527a54f271692d10158ebee8c9f3014",
+  "prefix": null
+ },
+ "adapters/hyperprior/adapter.py::HyperpriorAdapter.__init__": {
+  "md5": "8aec38e04d83f8b26260aaaa2b22e4d9",
+  "prefix": null
+ },
+ "adapters/hyperprior/adapter.py::HyperpriorAdapter._tensor": {
+  "md5": "4ffd7cc52d30a25ab666bdc374a1c6b5",
+  "prefix": null
+ },
+ "adapters/hyperprior/adapter.py::HyperpriorAdapter.bitstream_of": {
+  "md5": "2255498855aa96b3765c7443bdc4fbcc",
+  "prefix": null
+ },
+ "adapters/hyperprior/adapter.py::HyperpriorAdapter.decode_from_file": {
+  "md5": "f84f555710ee403a7ef1f20cb19310ff",
+  "prefix": null
+ },
+ "adapters/hyperprior/adapter.py::HyperpriorAdapter.device_name": {
+  "md5": "d1dea78bb83c7e43a70d0aed7bca8710",
+  "prefix": null
+ },
+ "adapters/hyperprior/adapter.py::HyperpriorAdapter.encode_to_file": {
+  "md5": "3a136c32b29bdc5997ac3e536f012137",
+  "prefix": null
+ },
+ "adapters/mean_scale/adapter.py::MeanScaleAdapter": {
+  "md5": "5e637ff1e216562a286ef52ea9f95e36",
+  "prefix": null
+ },
+ "adapters/mean_scale/adapter.py::MeanScaleAdapter.__init__": {
+  "md5": "152159e72a700f4929d2691e583166db",
+  "prefix": null
+ },
+ "adapters/mean_scale/adapter.py::MeanScaleAdapter._tensor": {
+  "md5": "4ffd7cc52d30a25ab666bdc374a1c6b5",
+  "prefix": null
+ },
+ "adapters/mean_scale/adapter.py::MeanScaleAdapter.bitstream_of": {
+  "md5": "2255498855aa96b3765c7443bdc4fbcc",
+  "prefix": null
+ },
+ "adapters/mean_scale/adapter.py::MeanScaleAdapter.decode_from_file": {
+  "md5": "d42c373cb357f84aa07fcaaa4584cb1c",
+  "prefix": null
+ },
+ "adapters/mean_scale/adapter.py::MeanScaleAdapter.device_name": {
+  "md5": "d1dea78bb83c7e43a70d0aed7bca8710",
+  "prefix": null
+ },
+ "adapters/mean_scale/adapter.py::MeanScaleAdapter.encode_to_file": {
+  "md5": "c214b2fe7f4a7a0971f8a95165ecc0f8",
+  "prefix": null
+ },
+ "adapters/mean_scale/adapter.py::decode_pair": {
+  "md5": "7eee59533cc2f772baf6e4707185ef6b",
+  "prefix": null
+ },
+ "adapters/mean_scale/adapter.py::load_mean_scale": {
+  "md5": "e10352daaf9ebbd18e7e429ef2eac4db",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::MsillmAdapter": {
+  "md5": "67857db1dfddc2fe628484b35944644c",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::MsillmAdapter.__init__": {
+  "md5": "a4b359c999e52aa810a9bf3f819087c1",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::MsillmAdapter._tensor": {
+  "md5": "4ffd7cc52d30a25ab666bdc374a1c6b5",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::MsillmAdapter.bitstream_of": {
+  "md5": "2255498855aa96b3765c7443bdc4fbcc",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::MsillmAdapter.decode_from_file": {
+  "md5": "859cb78f19802ec2adfbdb6097d0f7ff",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::MsillmAdapter.device_name": {
+  "md5": "d1dea78bb83c7e43a70d0aed7bca8710",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::MsillmAdapter.encode_to_file": {
+  "md5": "1c6662b70b2b42e9657ffaee39f2a737",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::_HS": {
+  "md5": "1f05856da30606d88f567e6b712f055a",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::_HS.__init__": {
+  "md5": "48dfa214528d3889fcd50291a8117e02",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::_HS.forward": {
+  "md5": "42deb600e0b9fb0764226efe1669a5b9",
+  "prefix": null
+ },
+ "adapters/msillm/adapter.py::load_hific": {
+  "md5": "21a5f0cc41ec9b875121bb71297ad36f",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmAdapter": {
+  "md5": "ec1e5ce1db76fa95a9f335c36c94cda2",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmAdapter.__init__": {
+  "md5": "068791ccb05182d8281bfab7571e2cba",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmAdapter._tensor": {
+  "md5": "4ffd7cc52d30a25ab666bdc374a1c6b5",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmAdapter.bitstream_of": {
+  "md5": "2255498855aa96b3765c7443bdc4fbcc",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmAdapter.decode_from_file": {
+  "md5": "4808f33c03461bdeed0d7615d4b1afd2",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmAdapter.device_name": {
+  "md5": "d1dea78bb83c7e43a70d0aed7bca8710",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmAdapter.encode_to_file": {
+  "md5": "acdd1aa33cf72b3448878ce24e3ac2e7",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmOps": {
+  "md5": "00174fa1f02b468799561fe44043d166",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmOps._slices": {
+  "md5": "25bc16ffef7fd63dcfb9157d801f6ea3",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmOps.base_decode": {
+  "md5": "5abb38c77de7a10319e710cace40a96b",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmOps.decode_y_string": {
+  "md5": "de4b9c81752be1abfcb832730b49d8fc",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmOps.encode_bytes": {
+  "md5": "907dd7bffba8b0309ef5ba31aca869c2",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmOps.post_lrp": {
+  "md5": "3476a7605a45ebd8c26f3690450a2447",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::TcmOps.quantize_main": {
+  "md5": "167126bc91afa855675b024a569cdf83",
+  "prefix": null
+ },
+ "adapters/tcm/adapter.py::load_tcm": {
+  "md5": "59a93f32aaec190e3e0edfb49a7fc034",
+  "prefix": null
+ },
+ "evaluation/fid_kid.py::PatchFeatureStore": {
+  "md5": "2e991a36f9dbbbd720ff6e73267f9e71",
+  "prefix": null
+ },
+ "evaluation/fid_kid.py::PatchFeatureStore.__init__": {
+  "md5": "741766ca89531f164bd57a8f9c24fb05",
+  "prefix": null
+ },
+ "evaluation/fid_kid.py::_Sink": {
+  "md5": "47494d8e65addd25eab603e218d2cabc",
+  "prefix": null
+ },
+ "evaluation/fid_kid.py::_Sink.__init__": {
+  "md5": "cc650153660a75d494a19a16028297b3",
+  "prefix": null
+ },
+ "evaluation/fid_kid.py::_Sink.update": {
+  "md5": "cc11e89e95dcd318b3c63b77371ef003",
+  "prefix": null
+ },
+ "evaluation/fid_kid.py::fid_kid": {
+  "md5": "0ebefa1b326650f0482eced983f49208",
+  "prefix": null
+ },
+ "evaluation/metrics.py::PairedMetrics": {
+  "md5": "af5fe54a88c516a9ec95b43a099aab85",
+  "prefix": null
+ },
+ "evaluation/metrics.py::PairedMetrics.__init__": {
+  "md5": "4fdae4b3aa1c9654baf931d76f335a68",
+  "prefix": null
+ },
+ "evaluation/metrics.py::PairedMetrics.score": {
+  "md5": "e2cb59a67b50abc14908d3cfbc1d00a8",
+  "prefix": null
+ },
+ "evaluation/metrics.py::build_metrics": {
+  "md5": "b93a000677a083220e4165352eae2eab",
+  "prefix": null
+ },
+ "evaluation/patch_metrics.py::ImageScorer": {
+  "md5": "7ce03804522586f21d9650b67ec26b3b",
+  "prefix": null
+ },
+ "evaluation/patch_metrics.py::ImageScorer.__init__": {
+  "md5": "ccf1a159c7b80a5cb43d135f0120e542",
+  "prefix": null
+ },
+ "evaluation/patch_metrics.py::ImageScorer.patch_features": {
+  "md5": "16216c149ed05f67736d5c276ca485fd",
+  "prefix": null
+ },
+ "evaluation/patch_metrics.py::ImageScorer.score": {
+  "md5": "07e1143fcdecf034e029a538f78db874",
+  "prefix": null
+ },
+ "evaluation/patch_metrics.py::fid_kid_both": {
+  "md5": "8d86592cce78d0f2b87ff8bfbef5ac05",
+  "prefix": null
+ },
+ "evaluation/patch_metrics.py::u8_to_t01": {
+  "md5": "b1b2797dedeb7d4b2085bf3cadcb77e0",
+  "prefix": null
+ },
+ "evaluation/png_io.py::from_uint8": {
+  "md5": "7115a6f1a55a2745c549c3d9fbc2e76f",
+  "prefix": null
+ },
+ "evaluation/png_io.py::save_png": {
+  "md5": "96a4dc2eb981d40ee5c085a6b88214f0",
+  "prefix": null
+ },
+ "evaluation/png_io.py::to_uint8": {
+  "md5": "075ae4c09257bf54001abff52be06c69",
+  "prefix": null
+ },
+ "nlbp/codec_interface.py::NlbpCodec": {
+  "md5": "6adf26fbc41a0a055ab6343edf4ca914",
+  "prefix": null
+ },
+ "nlbp/codec_interface.py::NlbpCodec.__init__": {
+  "md5": "ef9a6de5bf362aecbf610b0e4eff5fad",
+  "prefix": null
+ },
+ "nlbp/codec_interface.py::NlbpCodec.base_decode": {
+  "md5": "e3c158d66e54dd8d69be684876e35893",
+  "prefix": null
+ },
+ "nlbp/codec_interface.py::NlbpCodec.complement": {
+  "md5": "511dc4cb3dcd4ee45f7f972b3e50cdce",
+  "prefix": null
+ },
+ "nlbp/codec_interface.py::NlbpCodec.write_step": {
+  "md5": "bd1c146cc8f69a48456ae78cab5120ec",
+  "prefix": null
+ },
+ "nlbp/codec_interface.py::SignedWrapper": {
+  "md5": "95f7ea0b3c18fec1d1d2a01c42d5cebd",
+  "prefix": null
+ },
+ "nlbp/codec_interface.py::SignedWrapper.__init__": {
+  "md5": "627ae7113deff90ea10ba570073d066e",
+  "prefix": null
+ },
+ "nlbp/codec_interface.py::SignedWrapper.wrapped_encoder": {
+  "md5": "f04c47e475bf4c376034ed2aefe71e4b",
+  "prefix": null
+ },
+ "nlbp/codec_interface.py::to01": {
+  "md5": "8e753890a325c684b5759bd28b5f50e6",
+  "prefix": null
+ },
+ "nlbp/final_write.py::TargetWrite": {
+  "md5": "4ffe4f87ccec90f3bcedfe4d0378dfd8",
+  "prefix": null
+ },
+ "nlbp/final_write.py::TargetWrite.__init__": {
+  "md5": "3012939f51d82bac9fd5919441e65fdb",
+  "prefix": null
+ },
+ "nlbp/final_write.py::TargetWrite.opt": {
+  "md5": "5a21c66718e69005b132a9db324a1853",
+  "prefix": null
+ },
+ "nlbp/final_write.py::TargetWrite.raw": {
+  "md5": "9d640124080919f681af52aa6fd36226",
+  "prefix": null
+ },
+ "nlbp/final_write.py::TargetWrite.write_b": {
+  "md5": "9679ae9af040a0a064d7950fde971f1c",
+  "prefix": null
+ },
+ "nlbp/priors/ddpm.py::index_to_s": {
+  "md5": "b7fc9996d6484dc807c8034285a1d50d",
+  "prefix": null
+ },
+ "nlbp/priors/ddpm.py::s_to_index": {
+  "md5": "f6bfe2b8ac90ac706697fa8dc98b0a07",
+  "prefix": null
+ },
+ "nlbp/priors/ddpm.py::snap_ddpm": {
+  "md5": "d157a7df19829197ff3152af7c8fe1a9",
+  "prefix": null
+ },
+ "nlbp/priors/deco512.py::build_deco": {
+  "md5": "915b51b8509e18a04011b4fea9c1eeb4",
+  "prefix": null
+ },
+ "nlbp/priors/deco512.py::load_deco_prior": {
+  "md5": "d4c4a4f7ec6b6e7bd18047e08de5b577",
+  "prefix": null
+ },
+ "nlbp/priors/deco512.py::tiled": {
+  "md5": "329f5cb09fec31117c934f964e29a2eb",
+  "prefix": null
+ },
+ "nlbp/priors/deco512.py::tiles_1d": {
+  "md5": "aeba16a64e8b8b4ebd76688302b2cb0f",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient": {
+  "md5": "686b6e188ee9566ce5dc1488f0320208",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient.__init__": {
+  "md5": "7d3b4d5a7ec8ffc85f9e11b20a0d9eef",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient._call": {
+  "md5": "dd3d111e887d437acdb549043c60ed48",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient._recv": {
+  "md5": "15d32b95e9c39841b5344e63426a7648",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient._send": {
+  "md5": "35c3cc7f5d1f8c1f8a09349df9c69215",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient._t": {
+  "md5": "01d6e6e4f57d5284206490ce0badc2b1",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient.close": {
+  "md5": "3a1e422f5a2f4889f8b05c2777952bd4",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient.decode": {
+  "md5": "eafcbeb25c9a0e295f74fe50e4af9176",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient.encode": {
+  "md5": "679818d2642e68fdb29afe62bb67e696",
+  "prefix": null
+ },
+ "nlbp/priors/latent_client.py::PriorClient.velocity": {
+  "md5": "87c9149d2cb854565d834ea403571dc1",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::Flux2Dev": {
+  "md5": "79c4bf8dab895c49e3e96eaae2992ce6",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::Flux2Dev.__init__": {
+  "md5": "54cc00457aadbfb1f6c9d8d4a8444d69",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::Flux2Dev.add_prompt": {
+  "md5": "e5c3319bfa42164012e2f6a5bceb926f",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::Flux2Dev.decode": {
+  "md5": "f430d75b05102f121c5ae26c042b7321",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::Flux2Dev.encode": {
+  "md5": "6220d3c349cab5dc698373aac3d84468",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::Flux2Dev.velocity": {
+  "md5": "109fbbfee3cedb8dead801a98cb1d477",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::ZImage": {
+  "md5": "aaa0e6bd9cfaa33cdbbd6f4dbef6361c",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::ZImage.__init__": {
+  "md5": "684b44c48b7a403c51829658bf0d9cab",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::ZImage._embed": {
+  "md5": "88165dc847caa96cc30ebef45b556547",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::ZImage._out": {
+  "md5": "cd8779ed1a4bcef31336b9f47cb2d124",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::ZImage.add_prompt": {
+  "md5": "0b384d773b316de1c4b78a94868c99d1",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::ZImage.decode": {
+  "md5": "a100533b8354cc4e787a2acdcc73ee4e",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::ZImage.encode": {
+  "md5": "88545c4ade67fb6e4165ae77fc8930b7",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::ZImage.velocity": {
+  "md5": "d7cb4bf6bb40236d0aed9accc7447c04",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::recv": {
+  "md5": "2683fe09a8a812cdea569e86b1ce06f4",
+  "prefix": null
+ },
+ "nlbp/priors/latent_server.py::send": {
+  "md5": "96ca5098219179803835aad2c9437a61",
+  "prefix": null
+ },
+ "nlbp/priors/pixnerd_t2i.py::build_pixnerd_t2i": {
+  "md5": "907c28ff56dee32153cad5a347f5b4c6",
+  "prefix": null
+ },
+ "nlbp/priors/pixnerd_t2i.py::load_net": {
+  "md5": "64fe7d1e70bad3fb54e013d2326a4240",
+  "prefix": null
+ },
+ "nlbp/priors/pixnerd_t2i.py::load_pixnerd_t2i_flow_prior": {
+  "md5": "708e0a1bd607d1acd6f210489dd31ea1",
+  "prefix": null
+ },
+ "nlbp/priors/qwen3_embed_child.py::main": {
+  "md5": "2ff0ac06e42311ab96bc7da1423df748",
+  "prefix": null
+ },
+ "nlbp/priors/text_embedding.py::text_embedding": {
+  "md5": "a096b7ac0e5e2358b2fa3dddcf6bb4fb",
+  "prefix": null
+ },
+ "nlbp/priors/tiles.py::axis_starts": {
+  "md5": "9bb21ae83c9819fa93447bbc0567223e",
+  "prefix": null
+ },
+ "nlbp/priors/tiles.py::ramp_weight": {
+  "md5": "6da37460a9303e71a528cfa37978d23d",
+  "prefix": null
+ },
+ "nlbp/priors/tiles.py::tiles512": {
+  "md5": "9ee17fd36f10efe94125fbdbd4e852e6",
+  "prefix": null
+ },
+ "nlbp/schedule.py::abar_flow": {
+  "md5": "ffcc6889bc2cf08c8223b6f9a5e0c351",
+  "prefix": null
+ },
+ "nlbp/schedule.py::ddpm_abar": {
+  "md5": "d8b2d21e9479427bd857279077662fab",
+  "prefix": null
+ },
+ "nlbp/schedule.py::ddpm_to_flow": {
+  "md5": "85445785c022fbc958ef7665f2371c9e",
+  "prefix": null
+ },
+ "nlbp/schedule.py::seed_from_bitstream": {
+  "md5": "005087f96c922f51d319ef60b575e946",
+  "prefix": null
+ },
+ "nlbp/schedule.py::shift_fn": {
+  "md5": "a0b593861698ba2aa498faf1604a5313",
+  "prefix": null
+ },
+ "nlbp/schedule.py::snap_s": {
+  "md5": "049d891f0a9563b42de0a5da81937268",
+  "prefix": null
+ },
+ "nlbp/schedule.py::t0_of_s": {
+  "md5": "5c8a08136e98ab592e3e1f0c998abb53",
+  "prefix": null
+ },
+ "nlbp/schedule.py::unshift_fn": {
+  "md5": "4c561da0ad7a5db7a45ddf0eb5974b82",
+  "prefix": null
+ }
+}

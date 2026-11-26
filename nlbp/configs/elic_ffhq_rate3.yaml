@@ -1,0 +1,22 @@
+# NLBP, ELIC (Xu et al.'s rate-3 weights) on FFHQ 256 x 256, prior ffhq_10m, first decode, 8-bit storage.
+# Parameters of the stored configuration of the reported run (nlbp/sampler.py names); steps = len(t0, t0 - stride, ..., 0).
+codec: elic
+codec_config: nlbp/configs/elic_ffhq_codec.yaml   # weights, PCA basis, gain, prior files, settings
+rate: xu3
+prior: ffhq_10m
+storage: 8bit
+variant: R1
+target: yhat                 # v_ref
+upsample: 1
+prompt: empty
+cfg: 1.0
+t0: 317
+stride: 1
+min_bp: 375                  # steps with index >= min_bp use lambda2
+lambda2: 0.286           # early lambda_t
+lambda1: 0.114           # late lambda_t
+kz: 0.15                 # kappa
+opt_K: 30                   # K
+opt_lr: 0.0021
+snap: ddpm                    # priors/ddpm.snap_ddpm (nearest DDPM training index)
+shift: 1.0

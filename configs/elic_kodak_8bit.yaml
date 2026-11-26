@@ -1,0 +1,40 @@
+# ELIC, Kodak, 8-bit file chain. Receiver: float target y*_F and float D' output x_F, then the corrected 8-bit write
+# of y*_8 on x_F (lattice search, per-symbol hyper repair); the escalation ladder is off (preset decoder).
+codec: elic
+protocol: file_chain
+dataset: kodak
+rates: ["0.004", "0.008", "0.016", "0.032", "0.15", "0.45"]
+weights:                                # the re-implementation's weights; 0.15 / 0.45: Xu et al.'s ELIC weights
+  "0.004": weights/elic/ELIC_lambda0.004.pth.tar     # sha256 c56d4c1a03ed24ce...
+  "0.008": weights/elic/ELIC_lambda0.008.pth.tar     # sha256 4660eefab6243a7d...
+  "0.016": weights/elic/ELIC_lambda0.016.pth.tar     # sha256 22ac80a2f72ffb37...
+  "0.032": weights/elic/ELIC_lambda0.032.pth.tar     # sha256 1ecd4eac804b8485...
+  "0.15": weights/elic_xu/ELIC_0150_ft_3980_Plateau.pth.tar   # sha256 4ae38a952a4505e4...
+  "0.45": weights/elic_xu/ELIC_0450_ft_3980_Plateau.pth.tar   # sha256 9a1ac35d806d441d...
+method: elic_adapted
+pca: pca/pca_vimeo1000_f16.pt   # 16 x 16 patches, 1,000 Vimeo90K frames
+gain: 10.0                              # c
+settings:
+  encoder: variant_a                    # round 1: Q(E(x)); rounds >= 2: Q(E'(x))
+  search_start: proj
+  search_steps: 400
+  search_lr: 0.01
+  margin_y: 0.06                        # m_y (8-bit), target y*_8
+  float_margin_y: 0.02                  # m_y of the float target y*_F (start of the 8-bit repair)
+  margin_z: 0.02                        # m_z
+  refine_steps: 200
+  refine_lr: 0.003
+  refine_weight: 100.0
+  pad_rows: 96
+  pad_iters: 1000
+  pad_lr: 0.002
+  pad_cell_margin: 0.08
+  chain_format: png8
+  s8_signed_path: true                  # S_8 through [-1, 1] as the ELIC encoder normalizes
+  correction_budget: 30
+  context_free_count: 1
+  lattice_steps: 9056
+  lattice_trials: 9056                  # trials per lattice call
+  lattice_time_cap: 86000.0
+  lattice_scan: 64
+  lattice_group: 32

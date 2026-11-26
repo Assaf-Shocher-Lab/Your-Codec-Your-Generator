@@ -1,0 +1,24 @@
+# NLBP, AEIC ft2 on Kodak, prior deco512, first decode, float storage.
+# Parameters = the stored configuration of the reported run (nlbp/sampler.py names); opt_lr from the cell or the runner default.
+codec: aeic
+rate: "ft2"
+prior: deco512
+storage: float
+variant: R1
+target: yhat                # v_ref
+upsample: 1
+prompt: empty
+cfg: 1.0
+t0: 375
+stride: 120
+min_bp: 208                # steps with index >= min_bp use lambda2
+min_bp_frac: 0.6436363636363637
+lambda2: 0.42                # early lambda_t
+lambda1: 0.42                # late lambda_t
+kz: 0.64                # kappa
+opt_K: 200                # K
+opt_lr: 0.02
+pm_K: 1
+post_t: 0.0
+snap: ddpm                    # priors/ddpm.snap_ddpm (DDPM index grid)
+shift: 1.0

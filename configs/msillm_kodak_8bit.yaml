@@ -1,0 +1,32 @@
+# MS-ILLM (NeuralCompression HiFiC autoencoder, released MS-ILLM weights), Kodak, 8-bit file chain; stage-0 decoder
+# (target search, corrected 8-bit write, lattice search, per-symbol hyper repair). k = M = 220.
+codec: msillm
+protocol: file_chain
+dataset: kodak
+rates: ["0.035", "0.07", "0.14", "0.3", "0.45"]
+weights: weights/msillm/msillm_target_{}bpp.ckpt
+method: msillm_adapted
+pca: pca/pca_vimeo1000_f16.pt   # 16 x 16 patches, 1,000 Vimeo90K frames
+gain: 10.0                              # c
+settings:
+  encoder: variant_a                    # round 1: Q(E(x)); rounds >= 2: Q(E'(x))
+  search_start: proj
+  search_steps: 400
+  search_lr: 0.01
+  margin_y: 0.06                        # m_y (8-bit)
+  margin_z: 0.02                        # m_z
+  refine_steps: 200
+  refine_lr: 0.003
+  refine_weight: 100.0
+  pad_rows: 96
+  pad_iters: 1000
+  pad_lr: 0.002
+  pad_cell_margin: 0.08
+  chain_format: png8
+  correction_budget: 30
+  context_free_count: 1
+  lattice_steps: 9056
+  lattice_trials: 9056                  # trials per lattice call
+  lattice_time_cap: 86000.0
+  lattice_scan: 64
+  lattice_group: 32

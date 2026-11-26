@@ -1,0 +1,29 @@
+# Codec side of the NLBP configurations hpcm_kodak_*.yaml: HPCM-Large (MSE) on Kodak (data/kodak), float storage.
+# The sender writes the codec's own file (round 1: Q(E(x))); the receiver selects y* under the float margins of the
+# HPCM float chain (configs/hpcm_kodak_float.yaml), runs NLBP toward y* and stores the float output as the 8-bit PNG
+# of evaluation/png_io.py; the check re-encodes the float output (round 2: Q(E'(x))) and compares record and bytes.
+codec: hpcm
+weights:
+  "0.0018": weights/hpcm/HPCM_Large_mse_0.0018.pth
+pca: pca/pca_vimeo1000_f16.pt           # 16 x 16 patches, 1,000 Vimeo90K frames
+gain: 10.0                              # c
+priors:                                 # external weights (README, "Weights and data"; third_party/nlbp_nets/UPSTREAM.md)
+  pixnerd_xxl16_t2i: weights/priors/pixnerd/PixNerd-XXL-P16-T2I_model.ckpt
+  qwen3_1p7b: weights/priors/qwen3_1p7b              # text encoder of the PixNerd T2I prior (empty-prompt embedding)
+  latent_models: weights/priors                      # zimage/, flux2_dev/ (diffusers folders) for the latent priors
+opt_lr: 0.003                           # Adam step of the final b refinement unless the configuration gives one
+settings:
+  encoder: variant_a                    # round 1: Q(E(x)); rounds >= 2: Q(E'(x))
+  search_start: proj
+  search_steps: 4000
+  search_lr: 0.003
+  margin_y: 0.02                        # m_y (float)
+  margin_z: 0.002                       # m_z
+  refine_steps: 200
+  refine_lr: 0.003
+  refine_weight: 100.0
+  pad_rows: 96
+  pad_iters: 1000
+  pad_lr: 0.002
+  pad_cell_margin: 0.08
+  chain_format: none

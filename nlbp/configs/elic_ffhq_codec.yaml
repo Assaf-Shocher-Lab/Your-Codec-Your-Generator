@@ -1,0 +1,41 @@
+# Codec side of the NLBP configurations elic_ffhq_rate<r>.yaml: ELIC with Xu et al.'s rate 1-5 weights on FFHQ
+# 256 x 256 (data/ffhq256, scripts/prepare_ffhq256.py), 8-bit storage. The sender writes the codec's own file (round 1:
+# Q(E(x))); the receiver selects y* under the float margins (m_y = float_margin_y), runs NLBP toward y*, then the
+# corrected 8-bit write of the NLBP output toward y*_8 (m_y = margin_y; lattice search, per-symbol hyper repair; no
+# escalation ladder) and checks Sigma(E'(x_out)) = s on the stored PNG.
+codec: elic
+weights:                                # Xu et al.'s ELIC files (rate 1-3 are byte-identical to the re-implementation's
+  xu1: weights/elic_xu/ELIC_0008_ft_3980_Plateau.pth.tar   # sha256 4660eefab6243a7d...   0.008 / 0.016 / 0.032 files)
+  xu2: weights/elic_xu/ELIC_0016_ft_3980_Plateau.pth.tar   # sha256 22ac80a2f72ffb37...
+  xu3: weights/elic_xu/ELIC_0032_ft_3980_Plateau.pth.tar   # sha256 1ecd4eac804b8485...
+  xu4: weights/elic_xu/ELIC_0150_ft_3980_Plateau.pth.tar   # sha256 4ae38a952a4505e4...
+  xu5: weights/elic_xu/ELIC_0450_ft_3980_Plateau.pth.tar   # sha256 9a1ac35d806d441d...
+pca: pca/pca_vimeo1000_f16.pt           # 16 x 16 patches, 1,000 Vimeo90K frames
+gain: 10.0                              # c
+prior_repo: third_party/xu/src          # Xu et al.'s repository (UNet code of the prior), third_party/xu/UPSTREAM.md
+prior_weights: weights/priors/ffhq_10m.pt   # md5 d2d4694c11bcdfb6bf7f2dcd673ea73d
+opt_lr: 0.003                           # Adam step of the final b refinement unless the configuration gives one
+settings:
+  encoder: variant_a                    # round 1: Q(E(x)); rounds >= 2: Q(E'(x))
+  search_start: proj
+  search_steps: 400
+  search_lr: 0.01
+  margin_y: 0.06                        # m_y (8-bit), target y*_8
+  float_margin_y: 0.02                  # m_y of y* (the NLBP target)
+  margin_z: 0.02                        # m_z
+  refine_steps: 200
+  refine_lr: 0.003
+  refine_weight: 100.0
+  pad_rows: 96
+  pad_iters: 1000
+  pad_lr: 0.002
+  pad_cell_margin: 0.08
+  chain_format: png8
+  s8_signed_path: true                  # S_8 through [-1, 1] as the ELIC encoder normalizes
+  correction_budget: 30
+  context_free_count: 1
+  lattice_steps: 9056
+  lattice_trials: 9056                  # trials per lattice call
+  lattice_time_cap: 86000.0
+  lattice_scan: 64
+  lattice_group: 32

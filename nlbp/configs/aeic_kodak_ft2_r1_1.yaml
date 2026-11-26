@@ -1,0 +1,25 @@
+# NLBP, AEIC ft2 on Kodak, prior zimage, first decode, float storage.
+# Parameters = the stored configuration of the reported run (nlbp/sampler.py names); opt_lr from the cell or the runner default.
+codec: aeic
+rate: "ft2"
+prior: zimage
+storage: float
+variant: R1
+target: ystar                # v_ref
+latent: 1                # 1: latent-space prior (child process)
+vae_residual: 0                # 1: x_0 = D' + Dec(z_0) - Dec(Enc(D'))
+upsample: 1
+prompt: generic
+cfg: 1.0
+s0: 0.01                # omega (start noise); t0 = the DDPM index whose snapped flow time is nearest (sampler.resolve)
+n_steps: 1                # latent loop: steps s_k = s0 (1 - k / n)
+min_bp_frac: 0.753
+lambda2: 0.3                # early lambda_t
+lambda1: 0.3                # late lambda_t
+kz: 0.64                # kappa
+opt_K: 40                # K
+opt_lr: 0.003
+pm_K: 1
+post_t: 0.0
+snap: flow                    # schedule.snap_s (shifted flow grid)
+shift: 4.0

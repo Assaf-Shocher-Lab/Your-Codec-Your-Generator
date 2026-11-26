@@ -1,0 +1,56 @@
+# AEIC-ME, DIV2K valid (100 images, 2K), 8-bit canvas file chain; closed-loop budget 200 and one escalated write
+# with the wider hyper guard when the first write fails (App. B.3).
+codec: aeic
+protocol: canvas_file_chain
+dataset: div2k
+rates: [ft2, ft4, ft8, ft16, ft32]   # AEIC-ME checkpoints, highest rate (ft2) to lowest (ft32)
+weights:
+  ft2: weights/aeic/AEIC_ME_ft2.pkl
+  ft4: weights/aeic/AEIC_ME_ft4.pkl
+  ft8: weights/aeic/AEIC_ME_ft8.pkl
+  ft16: weights/aeic/AEIC_ME_ft16.pkl
+  ft32: weights/aeic/AEIC_ME_ft32.pkl
+sd_turbo: weights/sd-turbo                # stabilityai/sd-turbo (diffusers folder)
+vae_decoder: weights/aeic/halfDecoder.ckpt
+codec_model:                            # AEIC-ME as AEIC's compress.py builds it (compile_model off: speed only)
+  type: AEIC-ME
+  lora_rank_unet: 32
+  merge_lora: true
+  compile_model: false
+  use_tiled_vae: true
+  vae_decoder_tiled_size: 160
+  use_tiled_unet: true
+  latent_tiled_size: 96
+  latent_tiled_overlap: 32
+pca: pca/pca_clic585_f32.pt             # 32 x 32 patches, 585 CLIC 2020 Professional training images
+wrapper:
+  patch: 32                             # f = one AEIC latent cell
+  weak_coefficients: 320                # k
+  gain_c: 10.0                          # c
+method: adapted
+aeic:                                   # adapters/aeic/codec.py AeicSettings
+  search_iters: 400
+  search_lr: 0.01
+  margin_y: 0.12                         # m_y
+  margin_z: 0.02                        # m_z
+  start: proj                           # projected start
+  polish_iters: 1000                    # refinement steps
+  polish_lr: 0.003
+  polish_weight: 100.0
+  pad_repair: false
+  pad_iters: 1000
+  pad_rows: 96
+  pad_lr: 0.002
+  pad_y_target: 0.35
+  pad_z_target: 0.4
+  pad_z_stop: 0.01
+  pad_cell_margin: 0.08
+  log_distances: true
+  log_pad_psnr: true
+  encoder: variant_a                    # round 1: Q(g_a(x)); rounds >= 2: Q(E'(x))
+settings:
+  chain_format: png8
+  correction_budget: 200
+  gamma_y: 0.02
+  gamma_z: 0.02
+  escalation_gamma_z: 0.10

@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+/weights/
+/data/
+/runs/
+*.pth
+*.pth.tar
+*.ckpt
+*.pkl
+*.safetensors
+/third_party/elic/src/
+!/third_party/glc/src/utils/lpips/weights/**/*.pth
+third_party/aeic/src/codec/MLCodec_*.so
+/third_party/xu/src/
+/third_party/nlbp_nets/src/
